@@ -1,0 +1,304 @@
+/* Move down content because of fixed navbar that is 50px tall */
+
+    body {
+
+        font-family: "Lato"],"Helvetica Neue"],Helvetica,Arial,sans-serif;
+        width: 100%;
+}
+
+    p {
+        font-family: Helvetica;
+        font-weight: normal;
+}
+
+/******************************************
+******CUSTOM BOOTSTRAP NAVBAR**************
+******************************************/
+
+    .navbar-default {
+        background-color: #5c5c5c;
+        border-color: #9c9c9c;
+        letter-spacing: 2px;
+        font-weight: bold;
+}
+    .navbar-default .navbar-brand {
+        color: #ecf0f1;
+}
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+        color: #000000;
+}
+    .navbar-default .navbar-text {
+        color: #ecf0f1;
+}
+    .navbar-default .navbar-nav > li > a {
+        color: #ecf0f1;
+}
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #000000;
+}
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: #000000;
+        background-color: #9c9c9c;
+}
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+        color: #000000;
+        background-color: #9c9c9c;
+}
+    .navbar-default .navbar-toggle {
+        border-color: #9c9c9c;
+}
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: #9c9c9c;
+}
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #ecf0f1;
+}
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        border-color: #ecf0f1;
+}
+    .navbar-default .navbar-link {
+        color: #ecf0f1;
+}
+    .navbar-default .navbar-link:hover {
+        color: #000000;
+}
+
+
+
+/******************************************
+******JUMBOTRON IMAGE AND HEADER***********
+******************************************/
+
+    .jumbotron {
+        background: url("../img/0489.jpg") no-repeat;
+        background-position:40% 30%;
+        background-size: cover;
+        padding: 15%;
+        margin: 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+}
+
+    .jumbotron h3 {
+        color: #fff;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        text-align: center;
+        text-shadow: 1px 1px 50px #0fa4a2;
+        opacity: 1;
+        letter-spacing: 5px;
+}
+
+    #sPhones {
+        color: #fff;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        text-align: center;
+        text-shadow: 1px 1px 50px #0fa4a2;
+        opacity: 1;
+        letter-spacing: 5px;
+}
+
+
+
+/******************************************
+******HEADER*******************************
+******************************************/
+
+    .header {
+        font-size:40px;
+        letter-spacing: 4px;
+        font-weight: bold;
+}
+
+
+
+/******************************************
+******PROJECTS SECTION*********************
+******************************************/
+
+    .projects {
+        background-color: #fff;
+        line-height: 1.75;
+        letter-spacing: 0.9px;
+}
+    .projects .img-responsive {
+        border: 1px solid #000;
+        margin-bottom: 60px;
+    }
+
+    .projects hr {
+        border-top: 2px solid #000;
+        height: 5;
+        margin-bottom: 50px;
+}
+    .projects h1 {
+        font-size:60px;
+        font-weight: bold;
+        letter-spacing: 5px;
+}
+
+    .projects h3, .projects a {
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #000;
+}
+
+    a img:hover {
+        opacity: .4;
+    }
+    a:focus, a:hover {
+        color: #5c5c5c;
+        opacity: .7;
+}
+
+
+
+/******************************************
+******ABOUT SECTION************************
+******************************************/
+
+    #about {
+        background-color: #18BC9C;
+}
+
+    #about p {
+        color: #fff;
+        font-size: 24px;
+        line-height: 1.5;
+        font-family: "Lato"],"Helvetica Neue"],Helvetica,Arial,sans-serif;
+        text-align: center;
+        vertical-align: center;
+        letter-spacing: 1.2px;
+
+}
+
+
+
+/******************************************
+******CONTACT SECTION**********************
+******************************************/
+
+    #contact {
+        background-color: #000;
+        color:#fff;
+        text-align: center;
+}
+
+    #contact p {
+        color: #fff;
+        font-size: 20px;
+        line-height: 1.5;
+        font-family: "Lato"],"Helvetica Neue"],Helvetica,Arial,sans-serif;
+        text-align: center;
+        vertical-align: center;
+        letter-spacing: 1.2px;
+
+}
+
+    #contact h1 {
+        margin-bottom: 20px;
+}
+
+    .btn-default {
+        border: 1px solid #42dca3;
+        color: #42dca3;
+        background-color: transparent;
+        font-weight: bold;
+}
+
+    .btn-default:hover,
+    .btn-default:focus {
+        border: 1px solid #42dca3;
+        outline: 0;
+        color: #000;
+        background-color: #42dca3;
+}
+
+    ul.banner-social-buttons {
+        margin-top: 0;
+}
+
+    .footer {
+        font-size: 3rem;
+}
+
+/***** Media Queries ********/
+
+/**FOR JUMBOTRON **/
+
+    @media screen and (max-width: 768px) {
+        .jumbotron h3 {
+            font-size: 20px;
+    }
+        .projects {
+            padding:120px 0;
+        }
+        #about {
+            padding:120px 0;
+        }
+        #contact {
+            padding:120px 0;
+    }
+}
+
+    @media screen and (max-width: 480px) {
+        .jumbotron h3 {
+            display: none;
+            font-size: 18px;
+            text-shadow: 1px 1px 100px #0fa4a2;
+    }
+}
+
+    @media screen and (max-width: 480px) {
+        .jumbotron h3 {
+            display: none;
+            font-size: 18px;
+            text-shadow: 1px 1px 100px #0fa4a2;
+    }
+
+        #sPhones {
+            display: block;
+            font-size: 18px;
+            text-shadow: 1px 1px 100px #0fa4a2;
+            line-height: 1.5;
+    }
+}
+
+
+    @media screen and (min-width: 480px) {
+        .jumbotron h3 {
+            display: block;
+    }
+        #sPhones {
+            display: none;
+    }
+
+@media (min-width: 768px) {
+        .projects {
+            padding:200px 0;
+        }
+        #about {
+            padding:300px 0;
+        }
+        #contact {
+            padding:200px 0;
+        }
+    }
+
+
+
+/** FOR NAVBAR **/
+
+    @media (max-width: 767px) {
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+            color: #ecf0f1;
+    }
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #000000;
+    }
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #000000;
+            background-color: #9c9c9c;
+    }
+}
