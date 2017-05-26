@@ -37,7 +37,8 @@ const colors = ["red", "blue", "green", "grey", "purple"];
 
 //store shown quotes here so we can check they are not repeated.
 let shownQuote = [];
-let quote, quoteTimeout;
+let colorsShown = [];
+let quote, quoteTimeout, randomColor;
 
 /*  This will print a random quote to the index page
     This wll call the checkRepeatQuote function to not display the same quote twice
@@ -45,11 +46,11 @@ let quote, quoteTimeout;
 */
 printQuote = () => {
     quote = getRandomQuote();
-    //check to make sure it has not been displayed before
-    checkRepeatQuote(quote);
+
     //set our local variables
     let source = quote.source;
     let tags = quote.tags;
+
     quote = quote.quote;
 
     //create our strings/HTML for the web page
@@ -60,12 +61,11 @@ printQuote = () => {
     document.getElementById('quote-box').innerHTML = quoteHTML + sourceHTML;
 
     //change the background to a random color from the colors array
-    let randomColor = Math.floor(Math.random() * 5);
+    getRandomColor();
     document.body.style.backgroundColor = colors[randomColor];
 
     //log quotes to the console so we can be sure it has not been repeated
     console.log(quote);
-
     //clear the timer
     window.clearTimeout(quoteTimeout);
     //restart 30 second quote timer
@@ -74,26 +74,45 @@ printQuote = () => {
 
 /*  This functon will first check that all quotes have been shown, if so, empty
     the array so we can start over.
-    Otherwise we use the find method on the shownQuote array, if we find the quote
-    we set the global variable "quote" to a new random quote and recursively call
-    the checkRepeatQuote function to do this check again. Until we find a un-Shown
+    Otherwise we use the find method on the shownQuote array; if we find the quote
+    we set the global variable "quote" to a new random quote, until we find a un-Shown
     quote, then push it to the shownQuote array.
+    This also applies to the color function below it.
 */
+
 checkRepeatQuote = (quoteToShow) => {
     if (shownQuote.length === quotes.length) {
         shownQuote = [];
     }
     if (shownQuote.find(previousQuote => previousQuote === quoteToShow)) {
         quote = getRandomQuote();
-        checkRepeatQuote(quote);
     } else {
         shownQuote.push(quoteToShow);
     }
 }
 
+checkRepeatColor = (colorToShow) => {
+    if (colorsShown.length === colors.length) {
+        colorsShown = [];
+    }
+    if (colorsShown.find(previousColor => previousColor === colorToShow)) {
+        randomColor = getRandomColor();
+    } else {
+        colorsShown.push(colorToShow)
+    }
+}
+
+//returns a random number for the colors array
+getRandomColor = () => {
+    randomColor = Math.floor(Math.random() * 5);
+    checkRepeatColor(colors[randomColor]);
+    return randomColor;
+}
+
 //Returns a random quote
 getRandomQuote = () => {
     let randomQuote = Math.floor(Math.random() * 6);
+    checkRepeatQuote(quotes[randomQuote]);
     return quotes[randomQuote];
 }
 
