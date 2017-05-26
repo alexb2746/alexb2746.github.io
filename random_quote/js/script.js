@@ -72,6 +72,17 @@ printQuote = () => {
     refreshQuote();
 }
 
+
+//Returns a random quote
+getRandomQuote = () => {
+    let randomQuote = Math.floor(Math.random() * 6);
+    if (checkRepeatQuote(quotes[randomQuote].quote)) {
+        return quotes[randomQuote]
+    } else {
+        return getRandomQuote();
+    }
+}
+
 /*  This functon will first check that all quotes have been shown, if so, empty
     the array so we can start over.
     Otherwise we use the find method on the shownQuote array; if we find the quote
@@ -84,10 +95,21 @@ checkRepeatQuote = (quoteToShow) => {
     if (shownQuote.length === quotes.length) {
         shownQuote = [];
     }
-    if (shownQuote.find(previousQuote => previousQuote === quoteToShow)) {
-        quote = getRandomQuote();
+    if (shownQuote.find(previousQuote => previousQuote == quoteToShow)) {
+        return false;
     } else {
         shownQuote.push(quoteToShow);
+        return true;
+    }
+}
+
+//returns a random number for the colors array
+getRandomColor = () => {
+    randomColor = Math.floor(Math.random() * 5);
+    if (checkRepeatColor(colors[randomColor])) {
+        return randomColor;
+    } else {
+        return getRandomColor();
     }
 }
 
@@ -96,25 +118,14 @@ checkRepeatColor = (colorToShow) => {
         colorsShown = [];
     }
     if (colorsShown.find(previousColor => previousColor === colorToShow)) {
-        randomColor = getRandomColor();
+        return false;
     } else {
-        colorsShown.push(colorToShow)
+        colorsShown.push(colorToShow);
+        return true;
     }
 }
 
-//returns a random number for the colors array
-getRandomColor = () => {
-    randomColor = Math.floor(Math.random() * 5);
-    checkRepeatColor(colors[randomColor]);
-    return randomColor;
-}
 
-//Returns a random quote
-getRandomQuote = () => {
-    let randomQuote = Math.floor(Math.random() * 6);
-    checkRepeatQuote(quotes[randomQuote]);
-    return quotes[randomQuote];
-}
 
 //This will call the printQuote function every 30 seconds to display a new quote
 refreshQuote = () => {
