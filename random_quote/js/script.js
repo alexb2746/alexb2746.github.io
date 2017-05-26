@@ -37,7 +37,7 @@ const colors = ["red", "blue", "green", "grey", "purple"];
 
 //store shown quotes here so we can check they are not repeated.
 let shownQuote = [];
-let quote;
+let quote, quoteTimeout;
 
 /*  This will print a random quote to the index page
     This wll call the checkRepeatQuote function to not display the same quote twice
@@ -65,6 +65,11 @@ printQuote = () => {
 
     //log quotes to the console so we can be sure it has not been repeated
     console.log(quote);
+
+    //clear the timer
+    window.clearTimeout(quoteTimeout);
+    //restart 30 second quote timer
+    refreshQuote();
 }
 
 /*  This functon will first check that all quotes have been shown, if so, empty
@@ -91,6 +96,15 @@ getRandomQuote = () => {
     let randomQuote = Math.floor(Math.random() * 6);
     return quotes[randomQuote];
 }
+
+//This will call the printQuote function every 30 seconds to display a new quote
+refreshQuote = () => {
+    quoteTimeout = window.setTimeout(printQuote, 30000);
+}
+
+//iniate the refreshQuote so it updates every 30 seconds even if the button is
+//never clicked
+refreshQuote();
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
