@@ -10,7 +10,7 @@ const game = (function() {
     const a = document.createElement('a');
     const p = document.createElement('p');
     const playerNameH2 = document.createElement('h2');
-    let playerName;
+    let playerName, playAgainstComputer;
 
     div.id = 'start';
     div.className = 'screen screen-start';
@@ -46,7 +46,7 @@ const game = (function() {
         $(startScreen).remove();
         $('body').children().show();
         // ask if they want to play against the computer
-        let playAgainstComputer = confirm('Want to play against the computer?');
+        playAgainstComputer = confirm('Want to play against the computer?');
         playerName = prompt('Please enter your name') || 'Anonymous';
         playerNameH2.textContent = 'Player: ' + playerName + ' is "O"';
         $('#board').find('h1').after('<br>');
