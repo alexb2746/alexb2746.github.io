@@ -28,9 +28,6 @@ const game = (function() {
     // these have to be declared after the above code runs
     const startScreen = document.getElementById('start');
     const startGameButton = document.getElementById('startButton');
-    // ask if they want to play against the computer
-    let playAgainstComputer = confirm('Want to play against the computer?');
-
     // winning combinations based on box index
     const winningBoxes = [
         [0,1,2],
@@ -48,7 +45,8 @@ const game = (function() {
         let currentPlayer = player.getActivePlayer();
         $(startScreen).remove();
         $('body').children().show();
-        playAgainstComputer = confirm('Want to play against the computer?');
+        // ask if they want to play against the computer
+        let playAgainstComputer = confirm('Want to play against the computer?');
         playerName = prompt('Please enter your name') || 'Anonymous';
         playerNameH2.textContent = 'Player: ' + playerName + ' is "O"';
         $('#board').find('h1').after('<br>');
