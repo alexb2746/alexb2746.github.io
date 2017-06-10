@@ -49,7 +49,6 @@ const game = (function() {
         playAgainstComputer = confirm('Want to play against the computer?');
         playerName = prompt('Please enter your name') || 'Anonymous';
         playerNameH2.textContent = 'Player: ' + playerName + ' is "O"';
-        $('#board').find('h1').after('<br>');
         $('#board').find('h1').after(playerNameH2);
         // For this game we are only ever having the user / "O" go first
         // This makes the computer click logic work as well
