@@ -230,16 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     $(name).on('input', checkNameNotBlank);
-    //     let nameInput = $(name).val();
-    //     if (nameInput.length > 0) {
-    //         $(nameLabel).css('color', '#000');
-    //         $(nameLabel).text(nameLabelText);
-    //
-    //     } else {
-    //         $(nameLabel).css('color', 'red');
-    //         $(nameLabel).text(nameLabelText + ' (please provide your name.)');
-    //     }
-    // });
 
     // check for valid email in real time
     const email = document.getElementById('mail');
