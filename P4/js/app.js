@@ -2,7 +2,7 @@
     This is the start / game module, it handles the UI and game engine
     so to speak.
 */
-const game = (function() {
+(function() {
     // Dynamically add starting screen
     const div = document.createElement('div');
     const header = document.createElement('header');
